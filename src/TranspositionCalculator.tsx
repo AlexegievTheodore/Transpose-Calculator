@@ -12,6 +12,7 @@ function TranspositionCalculator() {
   function handleToggleDropTunings(showDrop: boolean) {
     setShowDropTunings(showDrop);
 
+    // Defaultation logic for each time you change the filtering type
     if (showDrop) {
       setSourceTuning("drop-d");
       setTargetTuning("drop-d");
@@ -24,7 +25,6 @@ function TranspositionCalculator() {
   return (
     <>
       <div>
-        {/* <h3>Current Tuning</h3> */}
         <TuningDropdown
           type = "source"
           value={sourceTuning}
@@ -37,7 +37,6 @@ function TranspositionCalculator() {
         targetTuningId={targetTuning}
       />
       <div>
-        {/* <h3>Target Tuning</h3> */}
         <TuningDropdown
           type = "target"
           value={targetTuning}
@@ -46,7 +45,6 @@ function TranspositionCalculator() {
         />
       </div>
       <div>
-        {/* <p>Enable Drop Tunings</p> */}
         <TuningFilter
           showDropTunings={showDropTunings}
           onChange={handleToggleDropTunings}></TuningFilter>
