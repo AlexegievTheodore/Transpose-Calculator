@@ -28,7 +28,7 @@ function TransposeResult(props: TransposeResultProps) {
     targetTuning as Tuning,
   );
 
-  return <div>{result}</div>;
+  return <div className="result">{result}</div>;
 }
 
 export default TransposeResult;

@@ -23,33 +23,37 @@ function TranspositionCalculator() {
   }
 
   return (
-    <>
-      <div>
+    <div className="transposition-calculator">
+      <div className="tuning-field">
         <TuningDropdown
-          type = "source"
+          type="source"
           value={sourceTuning}
           onChange={setSourceTuning}
           showDropTunings={showDropTunings}
         />
       </div>
+
       <TransposeResult
         sourceTuningId={sourceTuning}
         targetTuningId={targetTuning}
       />
-      <div>
+
+      <div className="tuning-field">
         <TuningDropdown
-          type = "target"
+          type="target"
           value={targetTuning}
           onChange={setTargetTuning}
           showDropTunings={showDropTunings}
         />
       </div>
-      <div>
+
+      <div className="tuning-filter-wrap">
         <TuningFilter
           showDropTunings={showDropTunings}
-          onChange={handleToggleDropTunings}></TuningFilter>
+          onChange={handleToggleDropTunings}
+        />
       </div>
-    </>
+    </div>
   );
 }
 

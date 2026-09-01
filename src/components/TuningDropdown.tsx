@@ -14,20 +14,23 @@ function TuningDropdown(props: TuningDropdownProps) {
   );
 
   return (
-    <>
-      <label htmlFor="tunings-dropdown">
-        <select
-          value={props.value}
-          onChange={(e) => props.onChange(e.target.value)}>
-          {filteredTunings.map((tuning) => (
-            <option key={tuning.id} value={tuning.id}>
-              {tuning.name}
-            </option>
-          ))}
-        </select>
+    <label htmlFor="tunings-dropdown" className="tuning-select">
+      <span className="tuning-select-label">
         {props.type === "source" ? "Source" : "Target"} Tuning
-      </label>
-    </>
+      </span>
+      <select
+        id="tunings-dropdown"
+        className="tunings-dropdown"
+        value={props.value}
+        onChange={(e) => props.onChange(e.target.value)}
+      >
+        {filteredTunings.map((tuning) => (
+          <option key={tuning.id} value={tuning.id}>
+            {tuning.name}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }
 
