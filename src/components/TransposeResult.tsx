@@ -28,7 +28,7 @@ function TransposeResult(props: TransposeResultProps) {
     targetTuning as Tuning,
   );
 
-  return <div className="result">{result}</div>;
+  return <div className="result">{result} semitone(s)</div>;
 }
 
 export default TransposeResult;
